@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101d31">
+  <meta name="description" content="ReturnOS is a simulated item-level returns and refund operations prototype for IMPACTX 2026 Challenge 15.">
+  <title>ReturnOS · Returns operations prototype</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#overview" aria-label="ReturnOS home">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span><strong>return<span>OS</span></strong><small>TRUST &amp; RECOVERY</small></span>
+      </a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav id="side-nav" class="side-nav">
+        <button class="nav-link active" data-view="overview"><span class="nav-icon">◫</span><span>Overview</span><span class="nav-dot"></span></button>
+        <button class="nav-link" data-view="eligibility"><span class="nav-icon">✓</span><span>Eligibility preview</span></button>
+        <button class="nav-link" data-view="returns"><span class="nav-icon">↩</span><span>Item journeys</span><span class="nav-count" id="nav-return-count">2</span></button>
+        <button class="nav-link" data-view="refunds"><span class="nav-icon">₹</span><span>Refund ledger</span></button>
+        <button class="nav-link" data-view="reconciliation"><span class="nav-icon">⇄</span><span>Reconciliation</span><span class="nav-alert"></span></button>
+        <button class="nav-link" data-view="trust"><span class="nav-icon">♡</span><span>Fairness &amp; messages</span></button>
+        <button class="nav-link" data-view="audit"><span class="nav-icon">≡</span><span>Event audit</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="demo-badge"><span class="live-dot"></span><span><b>SIMULATION MODE</b><small>No real payments or pickups</small></span></div>
+        <div class="sidebar-user"><div class="avatar">RO</div><div><b>Returns operations</b><small>Demo workspace</small></div><span class="more">···</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-chevron">/</span><strong id="crumb-current">Overview</strong></div>
+        <div class="top-actions">
+          <span class="simulation-chip"><span class="pulse"></span> SIMULATED DATA</span>
+          <button class="icon-button" id="help-button" aria-label="About this prototype" title="About this prototype">?</button>
+          <button class="button button-quiet" id="reset-demo">Reset demo</button>
+        </div>
+      </header>
+      <div id="toast-region" class="toast-region" aria-live="polite"></div>
+      <div id="view-root" class="view-root" tabindex="-1"></div>
+      <footer class="page-footer"><span>ReturnOS · IMPACTX 2026 · Challenge 15</span><span>Prototype data stays in this browser <span class="footer-sep">·</span> <span id="saved-state">Saved locally</span></span></footer>
+    </main>
+  </div>
+  <dialog id="modal" class="modal" aria-labelledby="modal-title">
+    <div class="modal-head"><div><span id="modal-eyebrow" class="eyebrow">CASE ACTION</span><h2 id="modal-title">Review case</h2></div><button class="icon-button modal-close" id="modal-close" aria-label="Close">×</button></div>
+    <div id="modal-body" class="modal-body"></div>
+    <div id="modal-actions" class="modal-actions"></div>
+  </dialog>
+</body>
+</html>
